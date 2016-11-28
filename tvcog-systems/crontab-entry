@@ -1,0 +1,21 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=ttongue@techvalleycenterofgravity.com
+HOME=/
+
+# @reboot autossh -M 0 -N -R 8822:localhost:22 root@dev01.seiri.com
+
+04 3 * * * cd /root; ./processCardSystemLogs.sh
+# 25 3 * * * cd /home/ttongue/cardsystem; ./setCardListMySQL.py
+05 3 * * * cd /home/ttongue/cardsystem; ./generateCardList.py
+06 4,5,6,7,8,9,10,11,12 * * * cd /home/ttongue/cardsystem; ./autoLogoutSignins.py
+# 29 3 * * * links -source http://192.168.13.22/reload
+# 1 1 * * * cd /backups/admin1/sql; /usr/bin/mysqldump --all-databases -u root -pTVCOGpass1 --events > `date +%m%d%y`.all_databases.sql
+1 1 * * * /root/backup_databases
+# 1 4 * * * rsync -a /var /backups/sparta/admin01/var
+# 1 5 * * * rsync -a /home /backups/sparta/admin01/home
+# 1 6 * * * rsync -a /etc /backups/sparta/admin01/etc
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * * env LANG=C /usr/bin/mrtg /home/mrtg/cfg/switch01.cfg > /dev/null 2>&1
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * * env LANG=C /usr/bin/mrtg /home/mrtg/cfg/switch02.cfg > /dev/null 2>&1
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * * env LANG=C /usr/bin/mrtg /home/mrtg/cfg/fw01.cfg > /dev/null 2>&1
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * * env LANG=C /usr/bin/mrtg /home/mrtg/cfg/temp.cfg > /dev/null 2>&1
