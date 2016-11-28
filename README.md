@@ -1,5 +1,4 @@
-# seltzer-tonic-vagrant
-Installation Instructions for Seltzer &amp; Tonic
+# Installation Instructions for Seltzer &amp; Tonic
 
 Seltzer and Tonic are the two packages that comprise the Customer Relationship Management (CRM) system 
 at the Tech Valley Center of Gravity. It is used to track memberships, payments, provide card access and
