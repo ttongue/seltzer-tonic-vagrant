@@ -1,0 +1,6 @@
+[submodule "packages/tonic"]
+	path = packages/tonic
+	url = https://github.com/ttongue/tonic
+[submodule "packages/seltzer"]
+	path = packages/seltzer
+	url = https://github.com/ttongue/seltzer
