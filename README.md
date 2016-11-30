@@ -10,11 +10,17 @@ The Seltzer package is a fork of the open source Seltzer CRM whose main branch i
 
 Tonic uses the Seltzer database as a shared resource to perform tasks not possible in Seltzer itself, such as automated billing, membership signup and matriculation, and card system management. 
 
-To create a fully functional development environment to work on both Seltzer and Tonic, it is necessary to have Vagrant and all its dependencies installed. Once that is installed, the process for bringing up
-the development environment is:
+To create a fully functional development environment to work on both Seltzer and Tonic, it is necessary to have Vagrant and all its dependencies installed. Once that is installed, the process for bringing up the development environment is:
 
 
-1.) Create a directory to be used as the vagrant shared directory, and place the supplied Vagrantfile in the directory. The host machine should be have NFS installed to allow this directory to be shared in the virtual machine created by Vagrant. Vagrant will make its best effort to do the NFS configuration automatically, both in the host machine and in the virtual machine. The vagrant shared directory will be mounted at /vagrant on the virtual machine.
+1.) Clone the seltzer-tonic-vagrant repository and init/update the submodules:
+
+	git clone https://github.com/ttongue/seltzer-tonic-vagrant
+	cd seltzer-tonic-vagrant
+	git submodule init
+	git submodule update
+
+This process creates a directory to be used as the vagrant shared directory, and contains the Vagrantfile needed to initiate the virtual machine. The host machine should be have NFS installed to allow this directory to be shared in the virtual machine created by Vagrant. Vagrant will make its best effort to do the NFS configuration automatically, both in the host machine and in the virtual machine. The vagrant shared directory will be mounted at /vagrant on the virtual machine.
 
 2.) (Optional) Edit the Vagrantfile and make any needed changes to the configuration. The most common change is to change the IP address for the private network between the virtual machine and the host defined by "config.vm.network". The default is 192.168.14.27, but if you are using 192.168.14.xxx as a 
 network already, change the IP to some unused block and make a note of the IP.
