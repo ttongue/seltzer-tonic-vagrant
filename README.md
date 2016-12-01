@@ -25,15 +25,23 @@ This process creates a directory to be used as the vagrant shared directory, and
 2.) (Optional) Edit the Vagrantfile and make any needed changes to the configuration. The most common change is to change the IP address for the private network between the virtual machine and the host defined by "config.vm.network". The default is 192.168.14.27, but if you are using 192.168.14.xxx as a 
 network already, change the IP to some unused block and make a note of the IP.
 
-2.) Open a terminal window, cd to your vagrant shared directory and run:
+3.) Open a terminal window, cd to your vagrant shared directory and run:
 
  	vagrant up
 
-3.) Once the provisioning process is complete, you will have a running instance of the virtual machine with Seltzer and Tonic running. You can connect to the machine using:
+4.) Once the provisioning process is complete, you will have a running instance of the virtual machine with Seltzer and Tonic running. You can connect to the machine using:
 
     vagrant ssh
 
-4.) The Seltzer web site will be at http://((IP address set in config.vm.network))/crm/
+5.) Copy the Seltzer and Tonic configuration samples into place, and edit as needed:
+
+    cp packages/seltzer/config.sample.inc.php packages/seltzer/config.inc.php
+    cp packages/tonic/config/tvcogCfg-sample.py packages/tonic/config/tvcogCfg.py
+    cp packages/tonic/config/seltzerCfg-sample.py packages/tonic/config/seltzerCfg.py
+
+    The live config files are in the .gitignore so they will not be available to commit (as it should be).
+
+6.) The Seltzer web site will be at http://((IP address set in config.vm.network))/crm/
 
 
 
