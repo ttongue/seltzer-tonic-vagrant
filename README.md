@@ -39,7 +39,9 @@ network already, change the IP to some unused block and make a note of the IP.
     cp packages/tonic/config/tvcogCfg-sample.py packages/tonic/config/tvcogCfg.py
     cp packages/tonic/config/seltzerCfg-sample.py packages/tonic/config/seltzerCfg.py
 
-    The live config files are in the .gitignore so they will not be available to commit (as it should be).
+    The live config files are in the .gitignore so they will not be available to commit (as it should be). Note that in order to test Braintree-connected functions, you will need to get the Braintree
+    credentials to put into packages/tonic/config/tvcogCfg.py. Please read the config file for more
+    details!
 
 6.) The Seltzer web site will be at http://((IP address set in config.vm.network))/crm/
 
