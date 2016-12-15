@@ -45,7 +45,10 @@ network already, change the IP to some unused block and make a note of the IP.
 
 6.) The Seltzer web site will be at http://((IP address set in config.vm.network))/crm/
 
-
+7.) Create a password file for the restricted directory packages/tonic/cardsystem/private:
+	
+	cd packages/tonic/cardsystem/private
+	htpasswd -c psswd username password
 
 The distribution has a number of default passwords installed that you may wish to change. Below are some quick guides on changing passwords from their defaults for security purposes:
 
